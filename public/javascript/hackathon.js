@@ -20,7 +20,10 @@ hackathonApp.config(['$routeProvider',
 var hackathonLanding = angular.module('hackathonLanding', ['angular-loading-bar', 'ngAnimate', 'hackathonServices']);
 
 hackathonLanding.controller('hackathonLandingController', function($scope, $http) {
-    //
+    $scope.onClickLogin = function(){
+        console.log("teste");
+        window.location = 'auth/facebook';
+    }
 });
 
 //$.noty.defaults.layout = 'topRight';
