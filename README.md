@@ -1,4 +1,4 @@
-# HackathoFiesp
+# HackathonFiesp
 App para o evento da FIESP
 
 
