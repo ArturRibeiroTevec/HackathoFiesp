@@ -1,6 +1,6 @@
 var hackathonApp = angular.module('hackathonApp', ['ngRoute', 'angular-loading-bar', 'ngAnimate', 'hackathonControllers', 'hackathonServices']);
 
-hackathonApp.config(['$routeProvider',
+hexalotusApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
         when('/', {
@@ -19,17 +19,13 @@ hackathonApp.config(['$routeProvider',
 
 var hackathonLanding = angular.module('hackathonLanding', ['angular-loading-bar', 'ngAnimate', 'hackathonServices']);
 
-hackathonLanding.controller('hackathonLandingController', function($scope, $http,$location) {
-    $scope.onClickLogin = function(){
-        console.log("teste");
-        window.location = 'auth/facebook';
-    }
+hexalotusAppLogin.controller('hackathonLandingController', function($scope, $http) {
+    //
 });
 
-/*
-$.noty.defaults.layout = 'topRight';
-$.noty.defaults.theme = "relax";
-*/
+//$.noty.defaults.layout = 'topRight';
+//$.noty.defaults.theme = "relax";
+
 
  $(document).ready(function(){
     $(".sandwich").click(function(){
@@ -39,4 +35,4 @@ $.noty.defaults.theme = "relax";
             $(".page").addClass("menu-open");
         }
     });
- })
+ });
