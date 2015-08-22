@@ -1,8 +1,12 @@
 var hackathonControllers = angular.module('hackathonControllers', []);
 
-
-hackathonControllers.controller("HomeController", function($scope, $rootScope) {
-    
+hackathonControllers.controller("HomeController", function($scope, $rootScope, Users) {
+    Users.getMe().success(function(data) {
+        $rootScope.user = data;
+        console.log($rootScope.user)
+    }).error(function(data, status) {
+       alert("ERROR! "+ data);
+    });
 });
    
 
@@ -55,4 +59,4 @@ hackathonControllers.controller("SideMenuController", function($scope, $rootScop
     $scope.isActive = function(topic){
     	return $routeParams.topic == topic.uri || $routeParams.topic == topic._id;
     }
-});/*
+});*/

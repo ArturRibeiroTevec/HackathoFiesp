@@ -1,6 +1,6 @@
 var hackathonApp = angular.module('hackathonApp', ['ngRoute', 'angular-loading-bar', 'ngAnimate', 'hackathonControllers', 'hackathonServices']);
 
-hexalotusApp.config(['$routeProvider',
+hackathonApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
         when('/', {
@@ -12,14 +12,14 @@ hexalotusApp.config(['$routeProvider',
           controller: 'PhoneDetailCtrl'
         }).*/
         otherwise({
-            redirectTo: '/404'
+            redirectTo: '/'
         });
     }
 ]);
 
 var hackathonLanding = angular.module('hackathonLanding', ['angular-loading-bar', 'ngAnimate', 'hackathonServices']);
 
-hexalotusAppLogin.controller('hackathonLandingController', function($scope, $http) {
+hackathonLanding.controller('hackathonLandingController', function($scope, $http) {
     //
 });
 
