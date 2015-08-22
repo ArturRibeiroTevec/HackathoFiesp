@@ -35,6 +35,67 @@ div.landing button{
   -webkit-animation-delay: 1s;
 }
 
+div.universe{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+div.sideMenu{
+	width: 60%;
+    height: 100%;
+    position: absolute;
+    background-color: #FFF;
+}
+
+div.page{
+	box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #984A6F;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+    overflow-y:auto;
+}
+
+div.page header{
+    background-color: #FFF;
+    color: #984A6F;
+    width: 100%;
+    height: 50px;
+    vertical-align: center;
+}
+div.page header h4{
+	margin: 0;
+	padding-top: 15px;
+	text-align: center;
+}
+
+div.sandwich {
+    position: absolute;
+    width: 35px;
+    height: 40px;
+    cursor: pointer;
+    margin:12px;
+}
+
+div.sandwich span {
+    width: 100%;
+    height: 2px;
+    background-color: #984A6F;
+    display: block;
+    margin-bottom: 30%;
+}
+
+div.menu-open {
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+}
+
 /* bootstrap overhide*/
 
 .btn-primary{

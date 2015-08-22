@@ -3,16 +3,16 @@ var hackathonApp = angular.module('hackathonApp', ['ngRoute', 'angular-loading-b
 hackathonApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
-        /*when('/topics/:topic', {
-                templateUrl: 'partials/postListPartial.html',
-                controller: 'TopicsListController'
-            }).
-            when('/phones/:phoneId', {
-              templateUrl: 'partials/phone-detail.html',
-              controller: 'PhoneDetailCtrl'
-            }).*/
+        when('/', {
+            templateUrl: 'partials/home.html',
+            controller: 'HomeController'
+        }).
+        /*when('/phones/:phoneId', {
+          templateUrl: 'partials/phone-detail.html',
+          controller: 'PhoneDetailCtrl'
+        }).*/
         otherwise({
-            redirectTo: '/'
+            redirectTo: '/404'
         });
     }
 ]);
@@ -30,3 +30,13 @@ hackathonLanding.controller('hackathonLandingController', function($scope, $http
 $.noty.defaults.layout = 'topRight';
 $.noty.defaults.theme = "relax";
 */
+
+ $(document).ready(function(){
+    $(".sandwich").click(function(){
+        if ($(".page").hasClass("menu-open")) {
+            $(".page").removeClass("menu-open");
+        } else {
+            $(".page").addClass("menu-open");
+        }
+    });
+ })
