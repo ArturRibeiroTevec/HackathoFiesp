@@ -105,6 +105,19 @@ div.menu-open {
     transform: translateX(50%);
 }
 
+div#map{
+    width: 100% !important;
+    height: 50% !important;
+}
+div#map *{
+    color: #000;
+}
+
+div.underMap{
+    position: absolute;
+    top: 60%;
+}
+
 /* bootstrap overhide*/
 
 .btn-primary{

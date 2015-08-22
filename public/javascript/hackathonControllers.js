@@ -1,5 +1,40 @@
 var hackathonControllers = angular.module('hackathonControllers', []);
 
+var cities = [
+    {
+        city : 'Morumbi',
+        desc : '',
+        lat : -23.6001688,
+        long : -46.717078
+    },
+    {
+        city : 'Paulista',
+        desc : '',
+        lat : -23.5552228,
+        long : -46.6620675
+    },
+    {
+        city : 'Butanta',
+        desc : '',
+        lat : -23.560568, 
+        long : -46.727423
+    },
+    {
+        city : 'Tucuruvi',
+        desc : '',
+        lat : -23.473823, 
+        long : -46.611082
+    },
+    {
+        city : 'Santana',
+        desc : '',
+        lat : -23.497009, 
+        long : -46.628798
+    }
+];
+
+
+
 hackathonControllers.controller("HomeController", function($scope, $rootScope, Users) {
     Users.getMe().success(function(data) {
         $rootScope.user = data;
@@ -8,28 +43,51 @@ hackathonControllers.controller("HomeController", function($scope, $rootScope, U
        alert("ERROR! "+ data);
     });
 
-    function monitorateRenderMap(){
-        if(renderMap){
-            map = new google.maps.Map(document.getElementById('map'), {
-            controllerenter: {lat: -34.397, lng: 150.644},
-                zoom: 8
-            });
-            alert("teste")
-            clearInterval(ret)
-        }
+    var mapOptions = {
+        zoom: 11,
+        center: new google.maps.LatLng(-23.55,-46.68),
+        mapTypeId: google.maps.MapTypeId.TERRAIN
     }
 
-    var ret = setInterval(monitorateRenderMap,1000);
+    $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+    $scope.markers = [];
+    
+    var infoWindow = new google.maps.InfoWindow();
+    
+    var createMarker = function (info){
+        
+        var marker = new google.maps.Marker({
+            map: $scope.map,
+            position: new google.maps.LatLng(info.lat, info.long),
+            title: info.city
+        });
+        marker.content = '<div class="infoWindowContent">' + info.desc + '</div>';
+        
+        google.maps.event.addListener(marker, 'click', function(){
+            $scope.$apply(function () {
+                $scope.marker = marker;
+            });
+            /*infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
+            infoWindow.open($scope.map, marker);*/
+        });
+        
+        $scope.markers.push(marker);
+        
+    }  
+    
+    for (i = 0; i < cities.length; i++){
+        createMarker(cities[i]);
+    }
+
+    $scope.openInfoWindow = function(e, selectedMarker){
+        e.preventDefault();
+        google.maps.event.trigger(selectedMarker, 'click');
+    }
 
 
 });
 
-var map;
-var renderMap = false;
-function initMap() {
-    renderMap = true;
-}
-   
 
 /*hackathonControllers.controller("TopicsListController", function($scope, $rootScope, $routeParams, Posts) {
 	var limit = 15;

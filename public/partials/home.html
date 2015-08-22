@@ -1,10 +1,23 @@
-Bem vindo {{user.displayName}}
+<div id="map"></div>
+
+<div class="underMap">
+
+<!--<div id="class" ng-repeat="marker in markers | orderBy : 'title'">
+     <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+</div>-->
+
+
+<h4 ng-if="!marker"> Selecione o bairro no mapa acima.</h4>
+<div ng-if="marker">
+	<h4 > {{marker.title}} ótima escolha!</h4>
+	Clique em avançar para ir para o próximo passo
+	<br/><br/>
+	<button class="btn btn-lg btn-primary btn-block animated fadeInUp" ng-click="onClickLogin();">Avançar</button>
+</div>
+
+
+	<!--Bem vindo {{user.displayName}}
 teste
-<img src="//graph.facebook.com/{{user.facebookId}}/picture?type=large">
-<div id="map" style="width:200px;height:200px;position:absolute"></div>
-    <script type="text/javascript">
+<img src="//graph.facebook.com/{{user.facebookId}}/picture?type=large">-->
 
-
-    </script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZ3amhAIvgjGd2wMdszqKbEhRd73lWra4&callback=initMap">
-    </script>
+</div>
