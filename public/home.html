@@ -5,9 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="bower/font-awesome/css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="stylesheet/reset.css">
 		<link rel="stylesheet" type="text/css" href="stylesheet/style.css">
-
-		<script src="//use.typekit.net/lnj3rqa.js"></script>
-		<script>try{Typekit.load();}catch(e){}</script>
+		
 		<script type="text/javascript" src="bower/angular/angular.min.js"></script>
 		<script type="text/javascript" src="bower/angular-mocks/angular-mocks.js"></script>
 		<script type="text/javascript" src="bower/angular-animate/angular-animate.js"></script>
@@ -15,41 +13,11 @@
 		<script type="text/javascript" src="bower/angular-route/angular-route.min.js"></script>
 		<script type="text/javascript" src="bower/angular-loading-bar/build/loading-bar.min.js"></script>
 		<script type="text/javascript" src="bower/jquery/dist/jquery.min.js"></script>
-		<script type="text/javascript" src="javascript/hexalotusControllers.js"></script>
-		<script type="text/javascript" src="javascript/hexalotusServices.js"></script>
-		<script type="text/javascript" src="javascript/hexalotus.js"></script>
+		<script type="text/javascript" src="javascript/hackathonLandingControllers.js"></script>
+		<script type="text/javascript" src="javascript/hackathonLandingServices.js"></script>
+		<script type="text/javascript" src="javascript/hackathonLanding.js"></script>
 	</head>
 	<body>
-		<div class="universe">
-			<div class="andromeda" ng-controller="SideMenuController">
-				<div class="space-50px"></div>
-				<div class="logo">
-					<h3>Irineu Antunes</h3>
-					<h6>Just an other programmer</h6>
-				</div>
-				<div class="space-50px"></div>
-				<div>
-					<h4>Blog Categories</h4>
-				</div>
-				<div class="space-10px"></div>
-				<ul>
-					<a ng-repeat="topic in topics" href="#/topics/{{topic.uri}}"><li ng-class="{selected : isActive(topic)}"><i class="fa fa-{{iconFor(topic)}}"></i>{{topic.name}}</li></a>
-				</ul>
-				<div class="space-30px"></div>
-				<div>
-					<h4><i class="fa fa-search"></i> Find a post</h4>
-					<input type="text" />
-				</div>
-				
-				<div class="circular badge">
-					<h3>IA</h3>
-				</div>
-			</div>
-			<div class="milkyway">
-				<div class="stars">
-					<div ng-view></div>
-				</div>
-			</div>
-		</div>
+		
 	</body>
 </html>
