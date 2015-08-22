@@ -7,7 +7,28 @@ hackathonControllers.controller("HomeController", function($scope, $rootScope, U
     }).error(function(data, status) {
        alert("ERROR! "+ data);
     });
+
+    function monitorateRenderMap(){
+        if(renderMap){
+            map = new google.maps.Map(document.getElementById('map'), {
+            controllerenter: {lat: -34.397, lng: 150.644},
+                zoom: 8
+            });
+            alert("teste")
+            clearInterval(ret)
+        }
+    }
+
+    var ret = setInterval(monitorateRenderMap,1000);
+
+
 });
+
+var map;
+var renderMap = false;
+function initMap() {
+    renderMap = true;
+}
    
 
 /*hackathonControllers.controller("TopicsListController", function($scope, $rootScope, $routeParams, Posts) {

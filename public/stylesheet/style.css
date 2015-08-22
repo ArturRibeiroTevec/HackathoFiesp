@@ -68,6 +68,7 @@ div.page{
     -webkit-transition: .3s ease all;
     transition: .3s ease all;
     overflow-y:auto;
+    color: #fff;
 }
 
 div.page header{
