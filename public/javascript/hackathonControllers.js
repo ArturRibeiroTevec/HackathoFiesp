@@ -1,6 +1,7 @@
 var hackathonControllers = angular.module('hackathonControllers', []);
 
-/*hackathonControllers.controller("TopicsListController", function($scope, $rootScope, $routeParams, Posts) {
+/*
+hackathonControllers.controller("TopicsListController", function($scope, $rootScope, $routeParams, Posts) {
 	var limit = 15;
 	$scope.posts = [];
 
@@ -47,4 +48,4 @@ hackathonControllers.controller("SideMenuController", function($scope, $rootScop
     $scope.isActive = function(topic){
     	return $routeParams.topic == topic.uri || $routeParams.topic == topic._id;
     }
-});/*
+});*/

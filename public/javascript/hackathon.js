@@ -1,6 +1,6 @@
 var hackathonApp = angular.module('hackathonApp', ['ngRoute', 'angular-loading-bar', 'ngAnimate', 'hackathonControllers', 'hackathonServices']);
 
-hexalotusApp.config(['$routeProvider',
+hackathonApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
         /*when('/topics/:topic', {
@@ -19,9 +19,14 @@ hexalotusApp.config(['$routeProvider',
 
 var hackathonLanding = angular.module('hackathonLanding', ['angular-loading-bar', 'ngAnimate', 'hackathonServices']);
 
-hexalotusAppLogin.controller('hackathonLandingController', function($scope, $http) {
-    //
+hackathonLanding.controller('hackathonLandingController', function($scope, $http,$location) {
+    $scope.onClickLogin = function(){
+        console.log("teste");
+        window.location = 'auth/facebook';
+    }
 });
 
+/*
 $.noty.defaults.layout = 'topRight';
 $.noty.defaults.theme = "relax";
+*/
