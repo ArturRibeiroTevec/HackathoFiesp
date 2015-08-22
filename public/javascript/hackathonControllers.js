@@ -1,5 +1,15 @@
 var hackathonControllers = angular.module('hackathonControllers', []);
 
+hackathonControllers.controller("HomeController", function($scope, $rootScope, Users) {
+    Users.getMe().success(function(data) {
+        $rootScope.user = data;
+        console.log($rootScope.user)
+    }).error(function(data, status) {
+       alert("ERROR! "+ data);
+    });
+});
+   
+
 /*hackathonControllers.controller("TopicsListController", function($scope, $rootScope, $routeParams, Posts) {
 	var limit = 15;
 	$scope.posts = [];
@@ -12,8 +22,10 @@ var hackathonControllers = angular.module('hackathonControllers', []);
         $scope.posts.push(data);
         console.log(data);
     }).error(function(data, status) {});
+>>>>>>> 389155101749d7769f0128898cf43b1464c065e6
 });
 
+/*
 hackathonControllers.controller("SideMenuController", function($scope, $rootScope,$routeParams, Topics) {
 
     $rootScope.topics = [];
@@ -47,4 +59,4 @@ hackathonControllers.controller("SideMenuController", function($scope, $rootScop
     $scope.isActive = function(topic){
     	return $routeParams.topic == topic.uri || $routeParams.topic == topic._id;
     }
-});/*
+});*/
