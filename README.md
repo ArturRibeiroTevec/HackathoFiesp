@@ -3,5 +3,5 @@ App para o evento da FIESP
 
 
 # Para testar:
-'bower install
-'npm install
+bower install
+npm install
