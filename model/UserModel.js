@@ -4,7 +4,8 @@ var userSchema = new mongoose.Schema({
 	displayName : String,
 	gender : String,
 	facebookId : String,
-	email : String
+	email : String,
+	accessToken: String
 });
 
 module.exports = mongoose.model('User', userSchema);

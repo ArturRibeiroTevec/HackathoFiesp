@@ -1,0 +1,114 @@
+.body-wrap{
+	background-color: #984A6F !important;
+	color: #fff;
+	background: url('../images/skyline.jpg') no-repeat center center fixed !important;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+div.bg-overlay{
+	background-color: #984A6F;
+	opacity: .8;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+div.landing{
+	position: absolute;
+	width: 90%;
+	height: 200px;
+	top: calc(50% - 150px);
+}
+
+div.landing *{
+	text-align: center;
+}
+
+div.landing h6{
+  -webkit-animation-delay: 0.5s;
+}
+
+div.landing button{
+  -webkit-animation-delay: 1s;
+}
+
+div.universe{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+div.sideMenu{
+	width: 60%;
+    height: 100%;
+    position: absolute;
+    background-color: #FFF;
+}
+
+div.sideMenu li{
+	padding: 10px;
+}
+
+div.sideMenu a, div.sideMenu a:active, div.sideMenu a:visited{
+	color: #984A6F;
+}
+
+div.page{
+	box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #984A6F;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+    overflow-y:auto;
+    color: #fff;
+}
+
+div.page header{
+    background-color: #FFF;
+    color: #984A6F;
+    width: 100%;
+    height: 50px;
+    vertical-align: center;
+}
+div.page header h4{
+	margin: 0;
+	padding-top: 15px;
+	text-align: center;
+}
+
+div.sandwich {
+    position: absolute;
+    width: 35px;
+    height: 40px;
+    cursor: pointer;
+    margin:12px;
+}
+
+div.sandwich span {
+    width: 100%;
+    height: 2px;
+    background-color: #984A6F;
+    display: block;
+    margin-bottom: 30%;
+}
+
+div.menu-open {
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+}
+
+/* bootstrap overhide*/
+
+.btn-primary{
+	background-color: #fff !important;
+	color: #984A6F !important;
+	border-color: #eee !important;
+}
