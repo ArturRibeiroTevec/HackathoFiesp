@@ -49,6 +49,14 @@ div.sideMenu{
     background-color: #FFF;
 }
 
+div.sideMenu li{
+	padding: 10px;
+}
+
+div.sideMenu a, div.sideMenu a:active, div.sideMenu a:visited{
+	color: #984A6F;
+}
+
 div.page{
 	box-sizing: border-box;
     width: 100%;

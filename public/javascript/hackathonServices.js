@@ -1,5 +1,13 @@
 var hackathonServices = angular.module('hackathonServices', ['ngResource']);
 
+hackathonServices.factory('User', function($http) {
+    return {
+        getMe: function() {
+            return $http.get("/services/users/me");
+        }
+    }
+});
+
 /*hackathonServices.factory('Posts', function($http) {
     return {
         list: function(topic, skip, limit) {
