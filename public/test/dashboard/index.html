@@ -63,7 +63,7 @@
 	<body>
 		<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
 			<header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
-				<div class="mdl-layout__header-row mdl-layout-title"> Title </div>
+				<div class="mdl-layout__header-row mdl-layout-title"> Início </div>
 				<!-- <div class="mdl-layout__header-row">
 					<span class="mdl-layout-title">Home</span>
 					<div class="mdl-layout-spacer"></div>
@@ -108,54 +108,72 @@
 
 
 					<!-- Card -->
-					<div id="casaX" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+					<div id="casaX" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--12-col-desktop cardOut">
 
-						<div class="mdl-card__title mdl-card--expand mdl-color--teal-300 card" style="background-image: url('images/dog.png')">
-							<!-- <h2 class="mdl-card__title-text">Title</h2> -->
-						</div>
-						<div class="mdl-card__supporting-text mdl-color-text--grey-600" style="text-align">
-							Endereço
-							<br/> Descrição breve da casa.
-							<!-- <br/>
-							<a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Detalhes</a> -->
-						</div>
-						<div class="mdl-card__actions mdl-card--border" style="width: 100%">
-							<!-- Botoes -->
+						<!-- Card frente -->
+						
+						<div class="card">
+							<div id="casaX-front" class="frontCard">
+								<div class="mdl-card__title mdl-card--expand" style="padding: 0;">
+								<!-- style="background-image: url('images/houses/house1.jpg')"> -->
+								<button onclick="showDetails('casaX')" class="houseImg mdl-js-ripple-effect">
+									<img src="images/houses/house1.jpg" style="width:100%" />
+								</button>
+
+								<!-- <h2 class="mdl-card__title-text">Title</h2> -->
+								</div>
+								<div class="mdl-card__supporting-text mdl-color-text--grey-600" style="text-align">
+									Endereço
+									<br/> Descrição breve da casa.
+									<!-- <br/>
+									<a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Detalhes</a> -->
+								</div>
+							</div>
 							
-							<div style="margin: 0 auto; width: 200px"><!-- Ajustar aqui de descentralizar -->
-								<div class="circleButton-red"></div>
-								<div class="circleButton-green"></div>
+							<!-- Card detalhes -->
+
+							<div id="casaX-back" class="backCard">
+								<div class="mdl-card__title mdl-card--expand" style="padding: 0;">
+								<!-- style="background-image: url('images/houses/house1.jpg')"> -->
+									
+								<div class="houseImg">
+									
+									<h5>Title</h5>
+									<p> Dados blá blá blá blá blá </p>
+									<p> Dados blá blá blá blá blá </p>
+									<p> Dados blá blá blá blá blá </p>
+
+								</div>
+
+								<!-- <h2 class="mdl-card__title-text">Title</h2> -->
+								</div>
+								<div class="mdl-card__supporting-text mdl-color-text--grey-600" style="text-align">
+									Endereço
+									<br/> Descrição breve da casa 2 !!!!!!.
+									<!-- <br/>
+									<a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Detalhes</a> -->
+								</div>
+								<button onclick="hideDetails('casaX')" class="xButton">X</button>
 							</div>
 
-						</div>
-					</div>
-					<div class="demo-separator mdl-cell--1-col"></div>
-					<!---  -->
-
-					<!-- Card -->
-					<div id="casaY" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
-
-						<div class="mdl-card__title mdl-card--expand mdl-color--teal-300 card" style="background-image: url('images/dog.png')">
-							<!-- <h2 class="mdl-card__title-text">Title</h2> -->
-						</div>
-						<div class="mdl-card__supporting-text mdl-color-text--grey-600" style="text-align">
-							Endereço
-							<br/> Descrição breve da casa.
-							<!-- <br/>
-							<a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Detalhes</a> -->
-						</div>
-						<div class="mdl-card__actions mdl-card--border" style="width: 100%">
-							<!-- Botoes -->
-							
-							<div style="margin: 0 auto; width: 200px"><!-- Ajustar aqui se descentralizar -->
-								<div class="circleButton-red"></div>
-								<div class="circleButton-green"></div>
+							<div class="mdl-card__actions mdl-card--border" style="width: 100%">
+								<!-- Botoes -->
+								
+								<div style="margin: 0 auto; width: 200px"><!-- Ajustar aqui de descentralizar -->
+									<button id="casaX-okButton" onclick="okCasa('casaX')" class="circleButton-red"></button>
+									<button id="casaX-noButton" onclick="noCasa('casaX')" class="circleButton-green"></button>
+								</div>
 							</div>
-
 						</div>
+
 					</div>
 					<div class="demo-separator mdl-cell--1-col"></div>
-					<!---  -->
+					<!--- Card end -->
+
+
+					<!-- Next card -->
+
+
 
 
 
@@ -167,5 +185,6 @@
 			
 		
 		<script src="mdl/material.min.js"></script>
+		<script src="script.js"></script>
 	</body>
 </html>
