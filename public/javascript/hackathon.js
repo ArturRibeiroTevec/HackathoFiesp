@@ -23,6 +23,14 @@ hackathonApp.config(['$routeProvider',
             templateUrl: 'partials/cards.html',
             controller: 'CardsController'
         }).
+        when('/cardsPreference', {
+            templateUrl: 'partials/cardsPreference.html',
+            controller: 'CardsController'
+        }).
+         when('/myHouse', {
+            templateUrl: 'partials/myHouse.html',
+            controller: 'MyHouse'
+        }).
         /*when('/phones/:phoneId', {
           templateUrl: 'partials/phone-detail.html',
           controller: 'PhoneDetailCtrl'

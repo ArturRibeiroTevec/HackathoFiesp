@@ -21,6 +21,9 @@ hackathonServices.factory('Users', function($http) {
         },
         saveInformation : function(user){
             return $http.post("/services/users/saveInformation",user);
+        },
+        savePreference: function(user){
+            return $http.post("/services/users/savePreference",user);
         }
     }
 });

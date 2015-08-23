@@ -40,3 +40,19 @@ http.post("/services/users/saveInformation" ,http.noCache, function(req,res){
 		});
 	});
 });
+
+http.post("/services/users/savePreference" ,http.noCache, function(req,res){
+
+	UserModel.findById(req.body._id, function(err,user){
+		
+		user.preference = true;
+		
+		user.save(function(err){
+			if(!err){
+				res.json({status:"ok"})
+			}else{
+				res.json({status:"error"})
+			}
+		});
+	});
+});

@@ -1,14 +1,11 @@
 <div ng-repeat="user in users">
-	<div class="card" ng-if='user.preference != true'>
+	<div class="card" ng-if='user.preference == true'>
 		<div>
 			<div class="image" style="background-image:url('../uploads/{{user.house.pictures[0]}}')"></div>
 			<div class="desc">
 				Endereço: {{user.house.address}}<br/>
 				Quartos: {{user.house.rooms}}, Metragem: {{user.house.size}}
 			</div>
-			<div class="circleButton-red"></div>
-			<div class="circleButton-green" ng-click="confirmarCasa(user)"></div>
-			<div class="clearfix"></div>
 		</div>
 	</div>
 </div>

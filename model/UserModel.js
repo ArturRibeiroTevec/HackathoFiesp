@@ -15,7 +15,8 @@ var userSchema = new mongoose.Schema({
 		city : String,
 		state : String,
 		neighborhood : String
-	}
+	},
+	preference: Boolean
 });
 
 module.exports = mongoose.model('User', userSchema);

@@ -138,14 +138,35 @@ hackathonControllers.controller("fillCharacteristicsController", function($scope
 
 hackathonControllers.controller("CardsController", function($scope, $rootScope, Users) {
     $(".sandwich").show();
+    
     Users.listHouses().success(function(users) {
         $scope.users = users;
     }).error(function(data, status) {
         alert("ERROR! "+ data);
     });
+
+    $scope.confirmarCasa = function(user){
+        
+        Users.savePreference(user).success(function(data) {
+            
+            Users.listHouses().success(function(users) {
+                $scope.users = users;
+            }).error(function(data, status) {
+                alert("ERROR! "+ data);
+            });
+        
+        }).error(function(data, status) {
+            alert("ERROR! "+ data);
+        });;
+    }
+
 });
 
+hackathonControllers.controller("MyHouse", function($scope, $rootScope, Users) {
 
+
+
+});
 /*hackathonControllers.controller("TopicsListController", function($scope, $rootScope, $routeParams, Posts) {
 	var limit = 15;
 	$scope.posts = [];
