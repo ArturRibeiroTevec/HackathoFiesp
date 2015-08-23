@@ -1,0 +1,23 @@
+<div id="map"></div>
+
+<div class="underMap">
+
+<!--<div id="class" ng-repeat="marker in markers | orderBy : 'title'">
+     <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+</div>-->
+
+
+<h4 ng-if="!marker"> Selecione o bairro no mapa acima.</h4>
+<div ng-if="marker">
+	<h4 > {{marker.title}} ótima escolha!</h4>
+	Clique em avançar para ir para o próximo passo
+	<br/><br/>
+	<a class="btn btn-lg btn-primary btn-block animated fadeInUp" href="#fillLocation">Avançar</a>
+</div>
+
+
+	<!--Bem vindo {{user.displayName}}
+teste
+<img src="//graph.facebook.com/{{user.facebookId}}/picture?type=large">-->
+
+</div>
