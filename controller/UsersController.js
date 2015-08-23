@@ -7,6 +7,14 @@ http.get("/services/users/me", http.noCache, function(req,res){
 	res.json(req.user);
 });
 
+http.get("/services/users/list", http.noCache, function(req,res){
+	console.log({house : {neighborhood : req.user.interest}})
+	UserModel.find({"house.neighborhood" : req.user.interest}, function(err, results){
+		console.log(results.length)
+		res.json(results);
+	});
+});
+
 http.post("/services/users/upload", upload.array('pic', 4) ,http.noCache, function(req,res){
 	var fileNames = [];
 

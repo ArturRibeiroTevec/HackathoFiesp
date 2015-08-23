@@ -1,0 +1,10 @@
+<div ng-repeat="user in users" class="card">
+	<div class="image" style="background-image:url('../uploads/{{user.house.pictures[0]}}')"></div>
+	<div class="desc">
+		Endereço: {{user.house.address}}<br/>
+		Quartos: {{user.house.rooms}}, Metragem: {{user.house.size}}
+	</div>
+	<div class="circleButton-red"></div>
+	<div class="circleButton-green"></div>
+	<div class="clearfix"></div>
+</div>

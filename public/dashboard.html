@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html ng-app="hackathonApp">
 	<head>
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="bower/angular-loading-bar/build/loading-bar.min.css">
 		<link rel="stylesheet" type="text/css" href="bower/font-awesome/css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="bower/animate.css/animate.css">
@@ -8,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="stylesheet/style.css">
 		<link href="bower/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
+	
 		<script type="text/javascript" src="bower/angular/angular.min.js"></script>
 		<script type="text/javascript" src="bower/angular-mocks/angular-mocks.js"></script>
 		<script type="text/javascript" src="bower/angular-animate/angular-animate.js"></script>
@@ -29,20 +32,24 @@
 		
 		<div class="universe">
 			<div class="sideMenu">
+				<div class="user">
+					
+					<img class="img-circle"  src="//graph.facebook.com/{{user.facebookId}}/picture">
+					&nbsp;&nbsp;&nbsp;{{user.displayName}}
+				</div>
 				<ul>
 					<a href="#/"><li>Home</li></a>
-					<a href="#/"><li>Alugar</li></a>
-					<a href="#/"><li>Anunciar</li></a>
-					<a href="#/"><li>Sair</li></a>
+					<a href="#/"><li>Minha Casa</li></a>
+					<a href="#/"><li>Preferencias</li></a>
 				</ul>
 			</div>
 			<div class="page">
 				<header>
-					<!--<div class="sandwich">
+					<div class="sandwich">
 						<span></span>
 						<span></span>
 						<span></span>
-					</div>-->
+					</div>
 					<h4>Liber</h4>
 				</header>
 				<div id="map" style="width:200px;height:200px;position:absolute"></div>

@@ -16,6 +16,9 @@ hackathonServices.factory('Users', function($http) {
                 headers: {'Content-Type': undefined}
             });
         },
+        listHouses : function(){
+            return $http.get("/services/users/list");
+        },
         saveInformation : function(user){
             return $http.post("/services/users/saveInformation",user);
         }

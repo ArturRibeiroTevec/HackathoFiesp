@@ -15,10 +15,13 @@ hackathonApp.config(['$routeProvider',
             templateUrl: 'partials/fillCharacteristics.html',
             controller: 'fillCharacteristicsController'
         }).
-        
         when('/loading', {
             templateUrl: 'partials/loading.html',
             controller: 'LoadingController'
+        }).
+        when('/cards', {
+            templateUrl: 'partials/cards.html',
+            controller: 'CardsController'
         }).
         /*when('/phones/:phoneId', {
           templateUrl: 'partials/phone-detail.html',

@@ -34,6 +34,9 @@ var cities = [
 ];
 
 hackathonControllers.controller("LoadingController", function($scope, $rootScope,$location, $timeout, Users) {
+
+    $(".sandwich").hide();
+
     Users.getMe().success(function(data) {
         $rootScope.user = data;
         
@@ -41,6 +44,9 @@ hackathonControllers.controller("LoadingController", function($scope, $rootScope
             switch($rootScope.user.status){
                 case "NEW_USER":
                     $location.path("chooseMap");
+                    break;
+                case "FINISHED":
+                    $location.path("cards");
                     break;
             }
         },2000);
@@ -110,7 +116,6 @@ hackathonControllers.controller("FillLocationController", function($scope, $root
 
 hackathonControllers.controller("fillCharacteristicsController", function($scope, $rootScope, Users) {
     $("#map").remove();
-    
 
     $scope.$on('arquivoSelecionado', function (e, args) {
         $rootScope.user.house.pictures.push(args.arquivo);
@@ -129,6 +134,15 @@ hackathonControllers.controller("fillCharacteristicsController", function($scope
            alert("ERROR! "+ data);
         });
    }
+});
+
+hackathonControllers.controller("CardsController", function($scope, $rootScope, Users) {
+    $(".sandwich").show();
+    Users.listHouses().success(function(users) {
+        $scope.users = users;
+    }).error(function(data, status) {
+        alert("ERROR! "+ data);
+    });
 });
 
 

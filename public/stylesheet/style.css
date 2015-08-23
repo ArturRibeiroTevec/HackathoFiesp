@@ -1,5 +1,11 @@
+
+* {
+  font-family: 'Roboto', 'Helvetica', sans-serif !important;
+  font-weight: 300 !important
+}
+
 .body-wrap{
-	background-color: #984A6F !important;
+	background-color: #333 !important;
 	color: #fff;
 	background: url('../images/skyline.jpg') no-repeat center center fixed !important;
 	-webkit-background-size: cover;
@@ -9,7 +15,7 @@
 }
 
 div.bg-overlay{
-	background-color: #984A6F;
+	background-color: #333;
 	opacity: .8;
 	width: 100%;
 	height: 100%;
@@ -39,21 +45,28 @@ div.universe{
 	width: 100%;
     height: 100%;
     position: absolute;
+    overflow: hidden;
 }
 
 div.sideMenu{
 	width: 60%;
     height: 100%;
     position: absolute;
-    background-color: #FFF;
+    background-color: #37474F;
+}
+
+div.sideMenu div.user{
+    background-color: #263238;
+    padding: 15px 10px;
+    font-weight: 400 !important;
 }
 
 div.sideMenu li{
-	padding: 10px;
+	padding: 15px;
 }
 
 div.sideMenu a, div.sideMenu a:active, div.sideMenu a:visited{
-	color: #984A6F;
+	color: #9EAEB1;
 }
 
 div.page{
@@ -61,40 +74,43 @@ div.page{
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: #984A6F;
+    background-color: #F5F5F5;
     -webkit-transform: translateX(0);
     transform: translateX(0);
     -webkit-transition: .3s ease all;
     transition: .3s ease all;
     overflow-y:auto;
-    color: #fff;
+    color: #757575;
 }
 
 div.page header{
     background-color: #FFF;
-    color: #984A6F;
+    color: #263238;
     width: 100%;
-    height: 50px;
+    height: 60px;
     vertical-align: center;
+
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
 }
 div.page header h4{
 	margin: 0;
 	padding-top: 15px;
+    font-size: 20pt;
 	text-align: center;
 }
 
 div.sandwich {
     position: absolute;
-    width: 35px;
+    width: 30px;
     height: 40px;
     cursor: pointer;
-    margin:12px;
+    margin:18px;
 }
 
 div.sandwich span {
     width: 100%;
-    height: 2px;
-    background-color: #984A6F;
+    height: 1px;
+    background-color: #333;
     display: block;
     margin-bottom: 30%;
 }
@@ -122,10 +138,57 @@ div.scrollZone{
     max-height: calc(100% - 50px);
 }
 
+div.card{
+    height: 450px;
+    background-color: #fff;
+    position: relative;
+    margin-top: 20px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+div.card .image{
+    background: #eee no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 60%;
+}
+
+div.card .desc{
+    padding: 20px;
+    border-bottom:1px solid #ccc;
+}
+
+div.card .circleButton-red {
+    height: 60px;
+    width: 60px;
+    background-color: #E6423B;
+    background-image: url("../images/delete.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 100%;
+    float: left;
+    margin: 20px 20px 20px calc(50% - 100px);
+}
+
+div.card .circleButton-green {
+    height: 60px;
+    width: 60px;
+    background-color: #90EE90;
+    background-image: url("../images/checkmark.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 100%;
+    float: left;
+    margin: 20px;
+}
+
 /* bootstrap overhide*/
 
 .btn-primary{
 	background-color: #fff !important;
-	color: #984A6F !important;
+	color: #757575 !important;
 	border-color: #eee !important;
 }
