@@ -411,6 +411,7 @@
 				D62CEFA91B88FC5700579FF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D62CEFAA1B88FC5700579FF1 /* Build configuration list for PBXNativeTarget "HackathonProjTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +420,7 @@
 				D62CEFAC1B88FC5700579FF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

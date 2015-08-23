@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let strUrl = "http://www.google.com"
+        let strUrl = "http://52.3.102.84/"
         let url = NSURL(string: strUrl)
         let urlRequest = NSURLRequest(URL: url!)
         webView.loadRequest(urlRequest)
