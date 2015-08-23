@@ -33,16 +33,25 @@ var cities = [
     }
 ];
 
-
-
-hackathonControllers.controller("HomeController", function($scope, $rootScope, Users) {
+hackathonControllers.controller("LoadingController", function($scope, $rootScope,$location, $timeout, Users) {
     Users.getMe().success(function(data) {
         $rootScope.user = data;
-        console.log($rootScope.user)
+        
+        $timeout(function(){
+            switch($rootScope.user.status){
+                case "NEW_USER":
+                    $location.path("chooseMap");
+                    break;
+            }
+        },2000);
+        
     }).error(function(data, status) {
        alert("ERROR! "+ data);
     });
+});
 
+hackathonControllers.controller("ChooseMapController", function($scope, $rootScope, $location) {
+   
     var mapOptions = {
         zoom: 11,
         center: new google.maps.LatLng(-23.55,-46.68),
@@ -67,13 +76,12 @@ hackathonControllers.controller("HomeController", function($scope, $rootScope, U
         google.maps.event.addListener(marker, 'click', function(){
             $scope.$apply(function () {
                 $scope.marker = marker;
+                $rootScope.user.interest = marker.title;
             });
             /*infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
             infoWindow.open($scope.map, marker);*/
         });
-        
         $scope.markers.push(marker);
-        
     }  
     
     for (i = 0; i < cities.length; i++){
@@ -85,7 +93,42 @@ hackathonControllers.controller("HomeController", function($scope, $rootScope, U
         google.maps.event.trigger(selectedMarker, 'click');
     }
 
+    $scope.nextStep = function(){
+        $location.path("fillLocation");
+    }
+});
 
+hackathonControllers.controller("FillLocationController", function($scope, $rootScope) {
+   $("#map").remove();
+   $rootScope.user.house = {
+        pictures : []
+    }
+   $rootScope.user.house.city = "Sao Paulo";
+   $rootScope.user.house.state = "SP";
+
+});
+
+hackathonControllers.controller("fillCharacteristicsController", function($scope, $rootScope, Users) {
+    $("#map").remove();
+    
+
+    $scope.$on('arquivoSelecionado', function (e, args) {
+        $rootScope.user.house.pictures.push(args.arquivo);
+        $scope.$digest();
+    });
+
+   $scope.saveInformation = function(){
+        Users.upload($rootScope.user).success(function(files) {
+            $rootScope.user.house.pictures = files;
+            Users.saveInformation($rootScope.user).success(function(data) {
+                console.log(data);
+            }).error(function(data, status) {
+                alert("ERROR! "+ data);
+            });;
+        }).error(function(data, status) {
+           alert("ERROR! "+ data);
+        });
+   }
 });
 
 

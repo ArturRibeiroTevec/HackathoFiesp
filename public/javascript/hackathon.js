@@ -3,19 +3,48 @@ var hackathonApp = angular.module('hackathonApp', ['ngRoute', 'angular-loading-b
 hackathonApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
-        when('/', {
-            templateUrl: 'partials/home.html',
-            controller: 'HomeController'
+        when('/chooseMap', {
+            templateUrl: 'partials/chooseMap.html',
+            controller: 'ChooseMapController'
+        }).
+        when('/fillLocation', {
+            templateUrl: 'partials/fillLocation.html',
+            controller: 'FillLocationController'
+        }).
+        when('/fillCharacteristics', {
+            templateUrl: 'partials/fillCharacteristics.html',
+            controller: 'fillCharacteristicsController'
+        }).
+        
+        when('/loading', {
+            templateUrl: 'partials/loading.html',
+            controller: 'LoadingController'
         }).
         /*when('/phones/:phoneId', {
           templateUrl: 'partials/phone-detail.html',
           controller: 'PhoneDetailCtrl'
         }).*/
         otherwise({
-            redirectTo: '/'
+            redirectTo: '/loading'
         });
     }
 ]);
+
+hackathonApp.directive('tevecUploadArquivo', function () {
+    return {
+        scope: true,        //create a new scope
+        link: function (scope, el, attrs) {
+            el.bind('change', function (event) {
+                var arquivos = event.target.files;
+                //iterate files since 'multiple' may be specified on the element
+                for (var i = 0; i < arquivos.length; i++) {
+                    //emit event upward
+                    scope.$emit("arquivoSelecionado", { arquivo: arquivos[i] });
+                }
+            });
+        }
+    };
+});
 
 var hackathonLanding = angular.module('hackathonLanding', ['angular-loading-bar', 'ngAnimate', 'hackathonServices']);
 

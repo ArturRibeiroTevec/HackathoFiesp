@@ -4,6 +4,20 @@ hackathonServices.factory('Users', function($http) {
     return {
         getMe: function() {
             return $http.get("/services/users/me");
+        },
+        upload: function(user) {
+            var fd = new FormData();
+            for(var i=0; i < user.house.pictures.length; i++){
+                fd.append("pic", user.house.pictures[i]);
+            }
+            
+            return $http.post("/services/users/upload",fd, {
+                transformRequest: angular.identity,
+                headers: {'Content-Type': undefined}
+            });
+        },
+        saveInformation : function(user){
+            return $http.post("/services/users/saveInformation",user);
         }
     }
 });
