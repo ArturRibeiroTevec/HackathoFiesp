@@ -1,0 +1,190 @@
+
+<!doctype html>
+<!--
+	Material Design Lite
+	Copyright 2015 Google Inc. All rights reserved.
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+			https://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Material Design Lite</title>
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Material Design Lite">
+		<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+		<meta name="msapplication-TileColor" content="#3372DF">
+
+		<!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+		<!--
+		<link rel="canonical" href="http://www.example.com/">
+		-->
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="mdl/material.min.css">
+		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="stylesCustom.css">
+		<style>
+		#view-source {
+			position: fixed;
+			display: block;
+			right: 0;
+			bottom: 0;
+			margin-right: 40px;
+			margin-bottom: 40px;
+			z-index: 900;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+			<header class="demo-header mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
+				<div class="mdl-layout__header-row mdl-layout-title"> Início </div>
+				<!-- <div class="mdl-layout__header-row">
+					<span class="mdl-layout-title">Home</span>
+					<div class="mdl-layout-spacer"></div>
+					<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn"
+						<i class="material-icons">more_vert</i>
+					</button>
+					<ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
+						<li class="mdl-menu__item">About</li>
+						<li class="mdl-menu__item">Contact</li>
+						<li class="mdl-menu__item">Legal information</li>
+					</ul>
+				</div> -->
+			</header>
+			<div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+				<header style="padding: 5%">					
+					<div class="demo-avatar-dropdown">
+					<img src="images/user.jpg" class="demo-avatar">
+						<span style="margin-left:7%">Usuário</span>
+						<div class="mdl-layout-spacer"></div>
+						<button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+							<i class="material-icons" role="presentation">arrow_drop_down</i>
+							<span class="visuallyhidden">Accounts</span>
+						</button>
+						<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+							<li class="mdl-menu__item">Sair</li>
+						</ul>
+					</div>
+				</header>
+				<nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+					<a class="mdl-navigation__link" href="index.html"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Início</a>
+					<!-- <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Feed</a> -->
+					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>Minha casa</a>
+					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Preferências</a>
+					<div class="mdl-layout-spacer"></div>
+					<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+				</nav>
+			</div>
+
+			<!-- body -->
+			<main class="mdl-layout__content mdl-color--grey-100">
+				<div class="mdl-grid demo-content">
+
+
+					<!-- Card -->
+					<div id="casaX" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--12-col-desktop cardOut">
+
+						<!-- Card frente -->
+						
+						<div class="card">
+							<div id="casaX-front" class="frontCard">
+								<div class="mdl-card__title mdl-card--expand" style="padding: 0;">
+								<!-- style="background-image: url('images/houses/house1.jpg')"> -->
+								<button onclick="showDetails('casaX')" class="houseImg mdl-js-ripple-effect">
+									<img src="images/houses/house1.jpg" style="width:100%" />
+								</button>
+
+								<!-- <h2 class="mdl-card__title-text">Title</h2> -->
+								</div>
+								<div class="mdl-card__supporting-text mdl-color-text--grey-600" style="text-align">
+									Endereço
+									<br/> Descrição breve da casa.
+									<!-- <br/>
+									<a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Detalhes</a> -->
+								</div>
+							</div>
+							
+							<!-- Card detalhes -->
+
+							<div id="casaX-back" class="backCard">
+								<div class="mdl-card__title mdl-card--expand" style="padding: 0;">
+								<!-- style="background-image: url('images/houses/house1.jpg')"> -->
+									
+								<div class="houseImg">
+									
+									<h5>Title</h5>
+									<p> Dados blá blá blá blá blá </p>
+									<p> Dados blá blá blá blá blá </p>
+									<p> Dados blá blá blá blá blá </p>
+
+								</div>
+
+								<!-- <h2 class="mdl-card__title-text">Title</h2> -->
+								</div>
+								<div class="mdl-card__supporting-text mdl-color-text--grey-600" style="text-align">
+									Endereço
+									<br/> Descrição breve da casa 2 !!!!!!.
+									<!-- <br/>
+									<a href="#" class="mdl-button mdl-js-button mdl-js-ripple-effect">Detalhes</a> -->
+								</div>
+								<button onclick="hideDetails('casaX')" class="xButton">X</button>
+							</div>
+
+							<div class="mdl-card__actions mdl-card--border" style="width: 100%">
+								<!-- Botoes -->
+								
+								<div style="margin: 0 auto; width: 200px"><!-- Ajustar aqui de descentralizar -->
+									<button id="casaX-okButton" onclick="okCasa('casaX')" class="circleButton-red"></button>
+									<button id="casaX-noButton" onclick="noCasa('casaX')" class="circleButton-green"></button>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="demo-separator mdl-cell--1-col"></div>
+					<!--- Card end -->
+
+
+					<!-- Next card -->
+
+
+
+
+
+
+				</div>
+			</main>
+		</div>
+			
+			
+		
+		<script src="mdl/material.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>

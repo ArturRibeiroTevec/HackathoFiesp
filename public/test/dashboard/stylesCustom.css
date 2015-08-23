@@ -1,0 +1,87 @@
+
+
+
+.cardOut {
+
+  -webkit-perspective: 500;
+
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  
+}
+
+.frontCard {
+	-webkit-transition: -webkit-transform 1s;
+}
+
+.backCard {
+	display: none;
+	-webkit-transition: -webkit-transform 1s;
+}
+
+.backCard .houseImg {
+	
+	min-height: 200px;
+	padding: 7%
+}
+
+.xButton {
+	position:absolute;
+	right:0;
+	top:0;
+	padding: 2%;
+	font-weight: bold;
+}
+
+button {
+	border: 0;
+	outline:none;
+}
+
+
+.circleButton-red {
+	height: 60px;
+	width: 60px;
+	background-color: #f65;
+	background-image: url("images/delete.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	border-radius: 100%;
+	float: left;
+	margin: 2% 8%;
+	-webkit-transition: width 1s; /* Safari */
+    transition: width 1s;
+}
+
+.circleButton-green {
+	height: 60px;
+	width: 60px;
+	background-color: lightgreen;
+	background-image: url("images/checkmark.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	border-radius: 100%;
+	float: left;
+	margin: 2% 8%;
+	-webkit-transition: width 1s; /* Safari */
+    transition: width 1s;
+}
+
+.houseImg {
+	padding: 0;
+	width:100%
+}
+
+
+
+
+
+
+
+
+
+
+
